@@ -1,0 +1,155 @@
+<style>
+    .hair-loss-container {
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+    .hair-loss-heading {
+        margin-top: 40px;
+        font-size: 45px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .hair-loss-column>p {
+        text-align: center;
+        max-width: 580px;
+        margin: 20px auto;
+    }
+
+    .hair-loss-buttons {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        max-width: 550px;
+        margin: 40px auto;
+    }
+
+    .hair-loss-buttons button {
+        padding: 10px 25px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        transition: background-color 0.3s;
+        background: #d8d8d8;
+        border-radius: 10px;
+    }
+
+    .hair-loss-buttons button.active {
+        background-color: #1c283a;
+        color: white;
+    }
+
+    .hair-loss-content-row {
+        display: flex;
+    }
+
+    .hair-loss-left {
+        flex: 1;
+        max-width: 45%;
+        margin: 0 auto;
+    }
+
+    .hair-loss-left img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .hair-loss-right {
+        width: 55%;
+    }
+    .hair-loss-content-heading {
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .hair-loss-content {
+        display: none;
+    }
+    .hair-loss-content.active {
+        display: block;
+    }
+</style>
+
+<div class="hair-loss-container">
+    <div class="hair-loss-column">
+        <h2 class="hair-loss-heading">Results demonstrated after 150 days</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur dipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat.</p>
+        <div class="hair-loss-tabs">
+            <div id="hairTabButtons" class="hair-loss-buttons">
+                <button id="defaultOpen" class="hair-button active" onclick="openCity(event, 'hair1')">The Dermaroller</button>
+                <button class="hair-button" onclick="openCity(event, 'hair2')">Capilia Longa™</button>
+                <button class="hair-button" onclick="openCity(event, 'hair3')">Sensia Carota™</button>
+            </div>
+            <div class="hair-loss-content" id="hair1">
+                <div class="hair-loss-content-row">
+                    <div class="hair-loss-left">
+                        <img src="https://cdn.shopify.com/s/files/1/0780/6071/6356/files/giff_image.png?v=1737041448" alt="giff">
+                    </div>
+                    <div class="hair-loss-right">
+                        <h3 class="hair-loss-content-heading">The Dermaroller</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore
+                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut
+                            aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hair-loss-content" id="hair2">
+                <div class="hair-loss-content-row">
+                    <div class="hair-loss-left">
+                        <img src="https://cdn.shopify.com/s/files/1/0780/6071/6356/files/giff_image.png?v=1737041448" alt="giff">
+                    </div>
+                    <div class="hair-loss-right">
+                        <h3 class="hair-loss-content-heading">Capilia Longa™</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore
+                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi
+                            ut
+                            aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hair-loss-content" id="hair3">
+                <div class="hair-loss-content-row">
+                    <div class="hair-loss-left">
+                        <img src="https://cdn.shopify.com/s/files/1/0780/6071/6356/files/giff_image.png?v=1737041448" alt="giff">
+                    </div>
+                    <div class="hair-loss-right">
+                        <h3 class="hair-loss-content-heading">Sensia Carota™</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore
+                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi
+                            ut
+                            aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("hair-loss-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("hair-button");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    document.getElementById("defaultOpen").click();
+
+    </script>

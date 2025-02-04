@@ -12,14 +12,16 @@
         margin-bottom: 10px;
         text-align: center;
     }
+
     .hair-loss-column>p {
         text-align: center;
-        max-width: 580px;
+        max-width: 600px;
         margin: 20px auto;
     }
 
     .hair-loss-buttons {
         display: flex;
+        justify-content: center;
         gap: 15px;
         margin-bottom: 10px;
         border-radius: 10px;
@@ -31,6 +33,7 @@
         padding: 10px 25px;
         cursor: pointer;
         border: none;
+        color: #000;
         outline: none;
         transition: background-color 0.3s;
         background: #d8d8d8;
@@ -39,11 +42,12 @@
 
     .hair-loss-buttons button.active {
         background-color: #1c283a;
-        color: white;
+        color: #fff !important;
     }
 
     .hair-loss-content-row {
         display: flex;
+        column-gap: 30px;
     }
 
     .hair-loss-left {
@@ -60,96 +64,190 @@
     .hair-loss-right {
         width: 55%;
     }
+
     .hair-loss-content-heading {
-        font-size: 35px;
-        font-weight: 700;
+        font-size: 32px;
+        font-weight: 400;
         line-height: 1.2;
+        margin: 0;
     }
-    .hair-loss-content {
-        display: none;
-    }
-    .hair-loss-content.active {
-        display: block;
+
+    @media (max-width: 767px) {
+        .hair-loss-left {
+            max-width: 100% !important;
+        }
+
+        .hair-loss-right {
+            width: 100% !important;
+        }
+
+        .hair-loss-content-row {
+            flex-direction: column !important;
+        }
+
+        .hairs-container {
+            padding: 10px !important;
+        }
+
+        .hairs-container {
+            padding: 10px !important;
+        }
+
+        .hair-loss-buttons {
+            gap: 5px;
+        }
+
+        .hair-loss-content-heading {
+            margin: 0;
+        }
+
+        .hair-loss-right p {
+            font-size: 12px !important;
+            line-height: 1.5;
+        }
+
+        .hair-loss-content-row {
+            flex-direction: column;
+            padding: 0 20px;
+        }
+
+        .hair-loss-left {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .hair-loss-right {
+            max-width: 100%;
+            width: 100%;
+            padding-top: 20px;
+        }
+
+        .hair-loss-tabs {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .hair-loss-wrapper {
+            display: flex;
+            width: 100%;
+            /* Adjust based on number of tabs */
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .hair-loss-content {
+            width: 100%;
+            flex-shrink: 0;
+        }
     }
 </style>
+<div class="hairs-container">
+    <div class="hair-loss-container">
+        <div class="hair-loss-column">
+            <h2 class="hair-loss-heading">Hair loss can be reduced</h2>
+            <p>As long as there are active hair follicles, there is a chance for growth. But how to know if they’re
+                active? In most early-stage hair loss cases, the follicles are still capable of growing hair. They just
+                need some help.
+            </p>
+            <div class="hair-loss-tabs">
+                <div id="hairTabButtons" class="hair-loss-buttons">
+                    <button id="defaultOpen" class="hair-button active" onclick="openCity(event, 'hair1')">The
+                        Cause</button>
+                    <button class="hair-button" onclick="openCity(event, 'hair2')">The solution</button>
+                    <button class="hair-button" onclick="openCity(event, 'hair3')">The Results</button>
+                </div>
+                <div class="hair-loss-wrapper">
+                    <div class="hair-loss-content" id="hair1">
+                        <div class="hair-loss-content-row">
+                            <div class="hair-loss-left">
+                                <img src="https://cdn.shopify.com/s/files/1/0780/6071/6356/files/giff_3.gif?v=1737999488"
+                                    width="100%" height=" 100%">
+                            </div>
+                            <div class="hair-loss-right">
+                                <h3 class="hair-loss-content-heading">What’s the cause of hair loss?
+                                </h3>
+                                <p>Hair loss can be triggered by many factors: genetics, hormones, medication, illness,
+                                    or lifestyle. But often, these all affect one crucial thing:<br><br><strong>The
+                                        hair’s growth cycle.</strong><br><br>Ideally, around 90% of your hairs are
+                                    actively growing at any one time (growth phase). The remaining 10% are in their
+                                    resting &amp; shedding phase.<br><br>Hair loss happens when these numbers shift
+                                    toward the shedding phase.&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hair-loss-content" id="hair2">
+                        <div class="hair-loss-content-row">
+                            <div class="hair-loss-left">
+                                <img src="https://cdn.shopify.com/s/files/1/0780/6071/6356/files/giff_2.gif?v=1737997475"
+                                    width="100%" height=" 100%">
+                            </div>
+                            <div class="hair-loss-right">
+                                <h3 class="hair-loss-content-heading">The Solution</h3>
+                                <p>To stop shedding and grow hair, two things need to happen:</p>
+                                <p>1. An increase in the number of hairs in the growth phase.<br><br>2. A decrease in
+                                    the number of hairs in the shedding phase.<br></p>
+                                <p>While you may not have control over factors like your genetics, research shows that
+                                    it <em>is </em>possible to rebalance the hair growth cycle. <br><br>And often, it
+                                    can be done by giving nature a helping hand, without medication.</p>
 
-<div class="hair-loss-container">
-    <div class="hair-loss-column">
-        <h2 class="hair-loss-heading">Results demonstrated after 150 days</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur dipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat.</p>
-        <div class="hair-loss-tabs">
-            <div id="hairTabButtons" class="hair-loss-buttons">
-                <button id="defaultOpen" class="hair-button active" onclick="openCity(event, 'hair1')">The Dermaroller</button>
-                <button class="hair-button" onclick="openCity(event, 'hair2')">Capilia Longa™</button>
-                <button class="hair-button" onclick="openCity(event, 'hair3')">Sensia Carota™</button>
-            </div>
-            <div class="hair-loss-content" id="hair1">
-                <div class="hair-loss-content-row">
-                    <div class="hair-loss-left">
-                        <img src="https://cdn.shopify.com/s/files/1/0780/6071/6356/files/giff_image.png?v=1737041448" alt="giff">
+                            </div>
+                        </div>
                     </div>
-                    <div class="hair-loss-right">
-                        <h3 class="hair-loss-content-heading">The Dermaroller</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut
-                            aliquip ex ea commodo consequat.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="hair-loss-content" id="hair2">
-                <div class="hair-loss-content-row">
-                    <div class="hair-loss-left">
-                        <img src="https://cdn.shopify.com/s/files/1/0780/6071/6356/files/giff_image.png?v=1737041448" alt="giff">
-                    </div>
-                    <div class="hair-loss-right">
-                        <h3 class="hair-loss-content-heading">Capilia Longa™</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi
-                            ut
-                            aliquip ex ea commodo consequat.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="hair-loss-content" id="hair3">
-                <div class="hair-loss-content-row">
-                    <div class="hair-loss-left">
-                        <img src="https://cdn.shopify.com/s/files/1/0780/6071/6356/files/giff_image.png?v=1737041448" alt="giff">
-                    </div>
-                    <div class="hair-loss-right">
-                        <h3 class="hair-loss-content-heading">Sensia Carota™</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi
-                            ut
-                            aliquip ex ea commodo consequat.</p>
+                    <div class="hair-loss-content" id="hair3">
+                        <div class="hair-loss-content-row">
+                            <div class="hair-loss-left">
+                                <img src="https://cdn.shopify.com/s/files/1/0780/6071/6356/files/giff_1.gif?v=1737998670"
+                                    width="100%" height=" 100%">
+                            </div>
+                            <div class="hair-loss-right">
+                                <h3 class="hair-loss-content-heading">Clinically tested hair growth, without drugs</h3>
+                                <p>In our clinical trial, 30 men and women with various backgrounds used the Bio-Pilixin
+                                    Activation Serum daily for 150 days. Testing found that the serum can help increase
+                                    the growth phase and decrease the shedding phase.<br><br><strong>How did this
+                                        translate into real-life results?</strong></p>
+                                <ul>
+                                    <li><strong>93%</strong> were satisfied with the results</li>
+                                    <li><strong>93%</strong> had measurably less hair loss</li>
+                                    <li><strong>73%</strong> had a clinically tested increase in hair density </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <script>
-    function openCity(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("hair-loss-content");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("hair-button");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-    document.getElementById("defaultOpen").click();
+    var mobileX = window.matchMedia("(max-width: 767px)");
 
-    </script>
+    if (!mobileX.matches) {
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("hair-loss-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("hair-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
+    } else {
+        function openCity(evt, cityName) {
+            var tablinks = document.getElementsByClassName("hair-button");
+            var wrapper = document.querySelector(".hair-loss-wrapper");
+            var activeIndex = Array.from(tablinks).indexOf(evt.currentTarget);
+
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            evt.currentTarget.classList.add("active");
+
+            wrapper.style.transform = `translateX(-${activeIndex * 100}%)`;
+        }
+        document.getElementById("defaultOpen").click();
+    }
+</script>
